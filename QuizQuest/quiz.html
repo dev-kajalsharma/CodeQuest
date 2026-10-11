@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeQuest | Quiz</title>
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+  <!-- Quiz header: no footer on this page as requested -->
+  <header class="quiz-header">
+    <div class="brand">
+      <div class="brand-icon">⌘</div>
+      <strong>CodeQuest</strong>
+    </div>
+    <div class="quiz-meta">
+      <span id="topicLevel">Topic • Level</span>
+      <span id="timer">00:00</span>
+    </div>
+  </header>
+
+  <main class="quiz-container">
+    <div class="quiz-top">
+      <div>
+        <p class="eyebrow">CURRENT QUESTION</p>
+        <h1 id="questionNumber">Question 1 of 20</h1>
+      </div>
+      <div class="score-preview">
+        <span>Answered</span>
+        <strong id="answeredCount">0</strong>
+      </div>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress-track">
+      <div id="progressBar" class="progress-bar"></div>
+    </div>
+
+    <!-- Question card -->
+    <section class="question-card">
+      <p id="questionText" class="question-text">Question will appear here.</p>
+
+      <div id="optionsContainer" class="options-container">
+        <!-- Answer options are inserted by quiz.js -->
+      </div>
+    </section>
+
+    <!-- Navigation controls -->
+    <div class="quiz-actions">
+      <button id="previousBtn" class="secondary-btn">← Previous</button>
+
+      <div class="right-actions">
+        <button id="clearBtn" class="text-btn">Clear</button>
+        <button id="skipBtn" class="secondary-btn">Skip</button>
+        <button id="nextBtn" class="primary-btn">Next →</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

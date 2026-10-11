@@ -1,0 +1,298 @@
+/* ================= ATTRACTIVE RESULT PAGE ================= */
+
+:root {
+  --bg: #f4f5fb;
+  --card: #ffffff;
+  --text: #151821;
+  --muted: #737987;
+  --primary: #635bff;
+  --primary-light: #eeecff;
+  --border: #e6e8ef;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(91, 135, 255, .16), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(143, 105, 230, .13), transparent 30%),
+    linear-gradient(135deg, #eef4ff 0%, #f7f2ff 52%, #f2f8ff 100%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Main result wrapper */
+.result-container {
+  width: min(760px, 92%);
+  margin: 45px auto 25px;
+  text-align: center;
+}
+
+/* Decorative completion badge */
+.result-icon {
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 18px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #635bff, #8a83ff);
+  color: white;
+  font-size: 34px;
+  font-weight: 900;
+  box-shadow: 0 15px 35px rgba(99,91,255,.30);
+  border: 7px solid rgba(255,255,255,.75);
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 2.5px;
+}
+
+.result-container h1 {
+  font-size: clamp(34px, 5vw, 48px);
+  letter-spacing: -1.5px;
+  margin: 7px 0;
+}
+
+#resultSubtitle {
+  color: var(--muted);
+}
+
+/* Main score card */
+.result-card {
+  margin-top: 28px;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(230,232,239,.9);
+  border-radius: 30px;
+  padding: 32px;
+  box-shadow: 0 25px 70px rgba(28,32,55,.10);
+}
+
+/* Large score area */
+.main-score {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 25px 20px 28px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #f4f2ff, #fbfbff);
+  border: 1px solid #e3e0ff;
+}
+
+.main-score::after {
+  content: "★";
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  font-size: 75px;
+  color: rgba(99,91,255,.07);
+}
+
+.main-score span:first-child {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.main-score strong {
+  font-size: clamp(52px, 8vw, 70px);
+  line-height: 1;
+  letter-spacing: -3px;
+  color: var(--text);
+}
+
+#percentage {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 18px;
+  font-weight: 850;
+}
+
+/* Four result statistics */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.stat {
+  position: relative;
+  padding: 19px 8px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fafafd;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.stat:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(30,34,55,.07);
+}
+
+.stat span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-bottom: 8px;
+  font-weight: 650;
+}
+
+.stat strong {
+  font-size: 27px;
+}
+
+/* Time section */
+.time-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5px 0;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.time-box strong {
+  color: var(--text);
+  font-size: 16px;
+}
+
+/* Motivation card — displayed only for 15+ correct */
+.motivation {
+  position: relative;
+  margin-top: 18px;
+  padding: 22px 24px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #fff9df, #fffdf4);
+  border: 1px solid #f1df9a;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-align: left;
+  box-shadow: 0 12px 30px rgba(180,145,20,.08);
+}
+
+.motivation-star {
+  width: 45px;
+  height: 45px;
+  flex: 0 0 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #fff0a8;
+  color: #c58b00;
+  font-size: 23px;
+}
+
+.motivation p {
+  font-weight: 750;
+  line-height: 1.55;
+  color: #5c4b18;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Action buttons */
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 25px;
+}
+
+.primary-btn,
+.secondary-btn {
+  border-radius: 13px;
+  padding: 13px 21px;
+  font-weight: 750;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+  transform: translateY(-2px);
+}
+
+.primary-btn {
+  border: 0;
+  background: var(--primary);
+  color: white;
+  box-shadow: 0 9px 22px rgba(99,91,255,.22);
+}
+
+.secondary-btn {
+  border: 1px solid var(--border);
+  background: white;
+  color: var(--text);
+}
+
+/* Footer remains only on result/home pages */
+.site-footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 28px 20px 35px;
+  font-size: 13px;
+}
+
+@media (max-width: 650px) {
+  .result-container {
+    margin-top: 30px;
+  }
+
+  .result-card {
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .result-actions {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+  }
+}
+
+/* ================= ANSWER REVIEW ================= */
+.review-launch {
+  margin-top: 20px;
+  padding: 18px 20px;
+  border: 1px solid #e1defe;
+  border-radius: 20px;
+  background: linear-gradient(135deg,#ffffff,#f7f5ff);
+  display:flex; align-items:center; justify-content:space-between; gap:18px; text-align:left;
+  box-shadow:0 12px 30px rgba(60,55,120,.06);
+}
+.review-launch strong{display:block;font-size:15px;margin-bottom:4px}.review-launch span{display:block;color:var(--muted);font-size:12px;line-height:1.5}
+.review-btn{border:0;border-radius:12px;padding:12px 17px;background:var(--primary);color:#fff;font-weight:800;white-space:nowrap}
+.review-panel{margin-top:16px;background:#fff;border:1px solid var(--border);border-radius:25px;padding:25px;text-align:left;box-shadow:0 18px 50px rgba(28,32,55,.08)}
+.review-heading{display:flex;justify-content:space-between;gap:15px;align-items:end}.review-heading h2{margin-top:5px;font-size:25px}.review-heading p{color:var(--muted);font-size:13px;margin-top:5px}.review-count{padding:8px 12px;background:#f1f0ff;color:var(--primary);border-radius:999px;font-size:12px;white-space:nowrap}
+.review-filters{display:flex;gap:8px;margin:20px 0 15px;flex-wrap:wrap}.review-filter{border:1px solid var(--border);background:#fafafd;border-radius:10px;padding:9px 13px;font-weight:750;color:var(--muted)}.review-filter.active{background:var(--primary);border-color:var(--primary);color:#fff}
+.review-list{display:grid;gap:12px}.review-item{border:1px solid var(--border);border-radius:17px;padding:17px;background:#fcfcfe}.review-item.incorrect{border-left:4px solid #ef6a6a}.review-item.correct{border-left:4px solid #4dbb83}.review-item.skipped{border-left:4px solid #e2ad43}.review-q{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px}.review-q>span{flex:0 0 35px;height:30px;display:grid;place-items:center;border-radius:9px;background:#eeeaff;color:var(--primary);font-size:11px;font-weight:900}.review-q strong{font-size:14px;line-height:1.5}.answer-line{display:flex;justify-content:space-between;gap:15px;padding:10px 12px;border-radius:10px;margin-top:7px;font-size:12px}.answer-line span{font-weight:700;text-align:right}.user-answer{background:#fff1f1;color:#8b3c3c}.correct-answer{background:#edf9f2;color:#286844}.skipped-answer{background:#fff8e8;color:#80611e}.empty-review{padding:25px;text-align:center;color:var(--muted);background:#fafafd;border-radius:14px}
+@media(max-width:650px){.result-container{margin-top:25px}.result-card{padding:18px;border-radius:23px}.stats-grid{grid-template-columns:repeat(2,1fr)}.result-actions{flex-direction:column}.result-actions button{width:100%}.review-launch{align-items:stretch;flex-direction:column}.review-btn{width:100%}.review-panel{padding:18px}.review-heading{align-items:flex-start;flex-direction:column}.answer-line{flex-direction:column;gap:4px}.answer-line span{text-align:left}.result-icon{width:72px;height:72px}}
+
+
+/* Keep long code/options readable on every screen size. */
+.review-q strong, .answer-line span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
