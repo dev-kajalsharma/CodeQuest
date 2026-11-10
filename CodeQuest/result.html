@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeQuest | Result</title>
+  <link rel="stylesheet" href="css/result.css">
+</head>
+<body>
+  <main class="result-container">
+    <div class="result-icon">✓</div>
+    <p class="eyebrow">QUIZ COMPLETED</p>
+    <h1 id="resultTitle">Your Result</h1>
+    <p id="resultSubtitle">Here is how you performed.</p>
+
+    <!-- Score summary -->
+    <section class="result-card">
+      <div class="main-score">
+        <span>Your Score</span>
+        <strong id="score">0/20</strong>
+        <span id="percentage">0%</span>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <span>Attempted</span>
+          <strong id="attempted">0</strong>
+        </div>
+        <div class="stat">
+          <span>Skipped</span>
+          <strong id="skipped">0</strong>
+        </div>
+        <div class="stat">
+          <span>Correct</span>
+          <strong id="correct">0</strong>
+        </div>
+        <div class="stat">
+          <span>Incorrect</span>
+          <strong id="incorrect">0</strong>
+        </div>
+      </div>
+
+      <div class="time-box">
+        <span>Time Taken</span>
+        <strong id="timeTaken">00:00</strong>
+      </div>
+    </section>
+
+    <!-- Random motivational statement for scores >= 15 -->
+    <section id="motivationBox" class="motivation hidden">
+      <div class="motivation-star">★</div>
+      <p id="motivationText"></p>
+    </section>
+
+    <section class="review-launch">
+      <div>
+        <strong>Want to check your answers?</strong>
+        <span>Your incorrect, correct, and skipped questions stay hidden until you choose to review them.</span>
+      </div>
+      <button id="reviewToggle" class="review-btn">Review My Answers ↓</button>
+    </section>
+
+    <section id="reviewPanel" class="review-panel hidden">
+      <div class="review-heading">
+        <div>
+          <span class="eyebrow">ANSWER REVIEW</span>
+          <h2 id="reviewTitle">Incorrect answers</h2>
+          <p id="reviewIntro">See what you selected and the correct answer.</p>
+        </div>
+        <span class="review-count"><b id="reviewCount">0</b> questions</span>
+      </div>
+      <div class="review-filters">
+        <button class="review-filter active" data-filter="incorrect">✕ Incorrect</button>
+        <button class="review-filter" data-filter="correct">✓ Correct</button>
+        <button class="review-filter" data-filter="skipped">↷ Skipped</button>
+      </div>
+      <div id="reviewList" class="review-list"></div>
+    </section>
+
+    <div class="result-actions">
+      <button id="tryAgainBtn" class="primary-btn">Try Again</button>
+      <button id="homeBtn" class="secondary-btn">Back to Home</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    created with ❤️ by Kajal Sharma
+  </footer>
+
+  <script src="js/result.js"></script>
+</body>
+</html>
